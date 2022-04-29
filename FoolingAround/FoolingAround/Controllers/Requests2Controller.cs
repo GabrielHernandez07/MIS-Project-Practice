@@ -55,12 +55,12 @@ namespace FoolingAround.Controllers
             {
                 db.Requests.Add(request);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.PickupNumber = new SelectList(db.Pickups, "PickupNumber", "PickupNumber", request.PickupNumber);
             ViewBag.StoreNumber = new SelectList(db.Stores, "StoreNumber", "Location", request.StoreNumber);
-            return View(request);
+            return View();
         }
 
         // GET: Requests2/Edit/5
